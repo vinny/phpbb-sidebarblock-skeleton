@@ -1,0 +1,18 @@
+/*
+ * Sidebar Block Skeleton
+ *
+ * Keep CSS in this extension limited to block-specific presentation. The parent
+ * Sidebar Manager extension owns the common sidebar layout, block containers,
+ * spacing, and responsive behavior.
+ */
+
+/*
+ * Birthdays block
+ *
+ * The template also uses Sidebar Manager's shared list classes. This namespaced
+ * class exists so custom birthday styling can be added later without changing
+ * the parent extension or affecting other sidebar blocks.
+ */
+.vinny-sidebarblock-skeleton-birthdays {
+	margin-bottom: 0;
+}

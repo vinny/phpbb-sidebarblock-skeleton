@@ -1,0 +1,18 @@
+<!--
+	Birthdays dynamic block.
+
+	The PHP listener assigns S_SIDEBARBLOCK_SKELETON_BIRTHDAYS and the
+	sidebarblock_skeleton_birthdays loop. The parent Sidebar Manager extension provides
+	the surrounding block title, container, side placement, and enabled state.
+-->
+<!-- IF S_SIDEBARBLOCK_SKELETON_BIRTHDAYS -->
+	<ul class="vinny-sidebar-list vinny-sidebarblock-skeleton-birthdays">
+	<!-- BEGIN sidebarblock_skeleton_birthdays -->
+		<li class="vinny-sidebar-list-item">
+			<strong>{sidebarblock_skeleton_birthdays.USERNAME_FULL}<!-- IF sidebarblock_skeleton_birthdays.AGE --> ({sidebarblock_skeleton_birthdays.AGE})<!-- ENDIF --></strong>
+		</li>
+	<!-- END sidebarblock_skeleton_birthdays -->
+	</ul>
+<!-- ELSE -->
+	<div class="vinny-sidebar-list-meta">{L_SIDEBAR_SKELETON_BIRTHDAYS_EMPTY}</div>
+<!-- ENDIF -->

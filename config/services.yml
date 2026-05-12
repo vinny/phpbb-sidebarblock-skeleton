@@ -1,0 +1,12 @@
+services:
+    vinny.sidebarblock_skeleton.listener:
+        class: vinny\sidebarblock_skeleton\event\listener
+        arguments:
+            - '@template'
+            - '@user'
+            - '@config'
+            - '@dbal.conn'
+            - '@auth'
+            - '@dispatcher'
+        tags:
+            - { name: event.listener }
