@@ -24,7 +24,7 @@ This block exists as a working example. When creating a real block extension fro
 
 1. `migrations/v100_initial.php` inserts system block rows into Sidebar Manager's `vinny_sidebar_blocks` table.
 2. Sidebar Manager renders active blocks during `core.page_header`.
-3. For system blocks, Sidebar Manager dispatches the custom event `vinny.sidebar.render_system_block`.
+3. Sidebar Manager dispatches the custom event `vinny.sidebar.render_block`.
 4. `event/listener.php` checks whether the current block belongs to this extension.
 5. The listener prepares template variables and assigns a template file from this extension.
 6. Sidebar Manager renders the block using its normal sidebar layout.
@@ -345,7 +345,7 @@ protected function render_groups()
 }
 ```
 
-In `on_sidebar_render_system_block()`, call the new method:
+In `on_sidebar_render_block()`, call the new method:
 
 ```php
 if ($row['block_name'] === 'SIDEBAR_GROUPS_LIST')

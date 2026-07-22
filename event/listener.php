@@ -59,8 +59,8 @@ class listener implements EventSubscriberInterface
 	static public function getSubscribedEvents()
 	{
 		return [
-			'core.user_setup'					=> 'load_language_on_setup',
-			'vinny.sidebar.render_system_block'	=> 'on_sidebar_render_system_block',
+			'core.user_setup'			=> 'load_language_on_setup',
+			'vinny.sidebar.render_block'	=> 'on_sidebar_render_block',
 		];
 	}
 
@@ -80,7 +80,7 @@ class listener implements EventSubscriberInterface
 	}
 
 	/**
-	 * Populate dynamic system blocks registered by this extension.
+	 * Populate dynamic sidebar blocks registered by this extension.
 	 *
 	 * Sidebar Manager creates the visible sidebar block shell. This listener
 	 * decides whether the current block belongs to this extension, prepares its
@@ -91,7 +91,7 @@ class listener implements EventSubscriberInterface
 	 *
 	 * @param \phpbb\event\data $event The event object
 	 */
-	public function on_sidebar_render_system_block($event)
+	public function on_sidebar_render_block($event)
 	{
 		$row = $event['row'];
 		$block_data = $event['block_data'];
